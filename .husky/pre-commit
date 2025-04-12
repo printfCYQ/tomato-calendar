@@ -1,0 +1,13 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+node -v # 输出当前使用的 Node 版本
+
+# 加载 nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# 切换到指定的 Node 版本
+nvm use 21
+
+npm run lint

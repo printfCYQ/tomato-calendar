@@ -1,0 +1,25 @@
+{
+  "name": "tomato-calendar",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "ISC",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "prepare": "husky",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.12.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@types/node": "^22.14.1",
+    "eslint": "^9.24.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.6"
+  }
+}
