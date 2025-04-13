@@ -11,7 +11,30 @@
     <div id="calendar" style="width: 100vw;height: 100vh"></div>
     <script type="module">
         import CalendarComponent from "./src/index.js";
-        new CalendarComponent('calendar')
+        const schedules = {
+            '2025-04-15': ['会议', '项目讨论'],
+            '2025-04-20': ['健身', '购物']
+        };
+
+        const calendar = new CalendarComponent('calendar', schedules)
+        console.log(calendar);
+
+        // 模拟 schedules 变化
+        setTimeout(() => {
+            const newSchedules = {
+                ...schedules,
+                '2025-04-22': ['学习', '阅读']
+            };
+            calendar.updateSchedules(newSchedules);
+        }, 3000);
+
+
+        // 监听月份变更事件
+        const calendarContainer = document.getElementById('calendar');
+        calendarContainer.addEventListener('monthchange', (event) => {
+            const { year, month } = event.detail;
+            console.log(`月份已变更为 ${year} 年 ${month + 1} 月`);
+        });
     </script>
 </body>
 

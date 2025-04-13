@@ -1,3 +1,5 @@
+import type dayjs from 'dayjs'
+
 /**
  * 动态加载 CSS 文件
  * @param url - CSS 文件的 URL
@@ -18,4 +20,10 @@ export function loadJS(url: string) {
   script.src = url
   script.async = true
   document.head.appendChild(script)
+}
+
+// 判断是否为工作日
+export function isWeekday(date: dayjs.Dayjs): boolean {
+  const day = date.day()
+  return day !== 0 && day !== 6
 }
