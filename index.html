@@ -13,7 +13,9 @@
         import CalendarComponent from "./src/index.js";
         const schedules = {
             '2025-04-15': ['会议', '项目讨论'],
-            '2025-04-20': ['健身', '购物']
+            '2025-04-20': ['健身', '购物', '吃饭',
+                '打代码', '睡觉', '学习'
+            ]
         };
 
         const calendar = new CalendarComponent('calendar', schedules)
@@ -35,6 +37,14 @@
             const { year, month } = event.detail;
             console.log(`月份已变更为 ${year} 年 ${month + 1} 月`);
         });
+
+        calendarContainer.addEventListener('scheduleclick', (event) => {
+            console.log(event);
+        })
+
+        calendarContainer.addEventListener('dayclick', (event) => {
+            console.log(event);
+        })
     </script>
 </body>
 
